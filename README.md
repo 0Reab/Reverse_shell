@@ -1,4 +1,7 @@
 # Reverse_shell
 ```shell
-pyinstaller --onefile --add-data "cmds.txt;." --add-data "shellcode.txt;." --add-data "payload.txt;." your_script.py
+pip install pyinstaller
+```
+```shell
+pyinstaller --onefile --add-data "cmds.txt;." --add-data "shellcode.txt;." --add-data "payload.txt;." reverse_shell.py
 ```
