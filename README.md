@@ -1,5 +1,8 @@
 # Reverse_shell
 ```shell
+pip install pyautogui
+```
+```shell
 pip install pyinstaller
 ```
 ```shell
